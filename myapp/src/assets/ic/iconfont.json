@@ -1,0 +1,44 @@
+{
+  "id": "1453487",
+  "name": "ic",
+  "font_family": "iconfont",
+  "css_prefix_text": "el-ic",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "617438",
+      "name": "分类",
+      "font_class": "fenlei",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "947053",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "1114849",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "1638357",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "5439974",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    }
+  ]
+}
