@@ -1,24 +1,13 @@
 <template>
   <div id="app">
-    <el-container>
-      <el-header>
-        <toubu />
-      </el-header>
-
-      <el-main>
-        <cneten />
-      </el-main>
-
-      <el-footer id="footer">
-        <div>
-          <dibu />
-        </div>
-      </el-footer>
-    </el-container>
+   
+     <router-view />
+     
   </div>
 </template>
 
 <script>
+
 import dibu from "./components/footer/footer.vue";
 import toubu from "./components/toubu/toubu.vue";
 import cneten from "./components/nav/nav.vue";
