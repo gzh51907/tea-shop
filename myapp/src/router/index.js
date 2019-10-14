@@ -26,9 +26,9 @@ let router = new VueRouter({
             name: 'home',
             path: '/home',
             component: home
-        },{
-            path:'/',
-            redirect:'home'
+        }, {
+            path: '/',
+            redirect: 'home'
         },
         {
             name: 'list',
@@ -44,14 +44,14 @@ let router = new VueRouter({
             name: 'cart',
             path: '/cart',
             component: cart,
-          
-        
+
+
         },
         {
             name: 'mine',
             path: '/mine',
             component: mine,
-         
+
         },
         //动态路由，根据商品得id进入商品得详情页
         {

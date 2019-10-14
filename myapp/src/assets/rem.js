@@ -11,11 +11,11 @@
             b.innerText = a
         }
 }();
- 
+
 !function (a, b) {
     function c() {
         var b = f.getBoundingClientRect().width;
-        b / i > 750 && (b = 750 * i);
+        b / i > 375 && (b = 375 * i);
         var c = b / 10;
         f.style.fontSize = c + "px",
             k.rem = a.rem = c
