@@ -4,6 +4,7 @@
     <div class="center">
       <div class="aside">
         <li
+          class="lists"
           v-for="item in listmain"
           :key="item.title"
           v-on:click="tocsoll(item.title)"
@@ -12,7 +13,7 @@
       <div class="main" id="gundong">
         <ul v-for="item in listmain" :key="item.title">
           <h2>{{item.title}}</h2>
-          <li v-for="items in item.main" :key="items.id">
+          <li v-for="items in item.main" :key="items.id" v-on:click="togoods(item.list,items.id)">
             <img :src="require(`../assets/images/list/${items.url}`)" alt />
             <i>{{items.name}}</i>
           </li>
@@ -26,11 +27,13 @@
 export default {
   data() {
     return {
-      listmain: []
+      // main列表
+      listmain: [],
+      idex: 1
     };
   },
   async created() {
-    // 初始渲染main列表
+    // 数据库初始渲染main列表
     let { data } = await this.$axios.get("http://localhost:8080/list");
     let datas = data.data[0].list;
     this.listmain.push(...datas);
@@ -62,7 +65,7 @@ export default {
           gundong.scrollTo(0, 2658);
         } else if (val === "茶食品") {
           gundong.scrollTo(0, 2871);
-        } else if (val === "工艺品") {
+        } else if (val === "茶工艺") {
           gundong.scrollTo(0, 3000);
         } else if (val === "滋补养生") {
           gundong.scrollTo(0, 3180);
@@ -74,9 +77,57 @@ export default {
           gundong.scrollTo(0, 3180);
         }
       });
+    },
+    handleScroll() {
+      let main_totop = gundong.scrollTop;
+
+      if (main_totop > 1 && main_totop < 210) {
+        this.tochange(1);
+      } else if (main_totop >= 210 && main_totop < 510) {
+        this.tochange(2);
+      } else if (main_totop >= 510 && main_totop < 820) {
+        this.tochange(3);
+      } else if (main_totop >= 820 && main_totop < 1130) {
+        this.tochange(4);
+      } else if (main_totop >= 1130 && main_totop < 1527) {
+        this.tochange(5);
+      } else if (main_totop >= 1527 && main_totop < 1740) {
+        this.tochange(6);
+      } else if (main_totop >= 1740 && main_totop < 2040) {
+        this.tochange(7);
+      } else if (main_totop >= 2040 && main_totop < 2350) {
+        this.tochange(8);
+      } else if (main_totop >= 2350 && main_totop < 2658) {
+        this.tochange(9);
+      } else if (main_totop >= 2658 && main_totop < 2871) {
+        this.tochange(10);
+      } else if (main_totop >= 2871 && main_totop < 3000) {
+        this.tochange(11);
+      } else if (main_totop >= 3000 && main_totop < 3180) {
+        this.tochange(12);
+      } else if (main_totop >= 3180) {
+        this.tochange(13);
+      } else if (main_totop <= 1) {
+        this.tochange(0);
+      }
+    },
+    togoods(list, id) {
+      this.$router.push({ name: "goods", params: { list_name: list, list_id: id } });
+    },
+    tochange(id) {
+      var listchange = document.getElementsByClassName("lists");
+      for (var i = 0; i < listchange.length; i++) {
+        if (i === id) {
+          listchange[i].style = "color:red";
+        } else {
+          listchange[i].style = "color:black";
+        }
+      }
     }
   },
-  mounted() {}
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll, true);
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -86,6 +137,9 @@ export default {
 }
 li {
   list-style: none;
+}
+.active {
+  color: red;
 }
 .list {
   background-color: #f4f4f4;
