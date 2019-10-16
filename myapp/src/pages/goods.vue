@@ -129,6 +129,7 @@ ul li {
     top: 0;
     height: 3.2rem;
     width: 100%;
+    background-color: #f4f4f4;
     .topone {
       img {
         width: 0.8rem;
@@ -136,7 +137,7 @@ ul li {
       }
       .returnlist {
         position: fixed;
-        top: 0.106667rem;
+        top: 0.306667rem;
         left: 0.266667rem;
       }
       h1 {
@@ -149,16 +150,22 @@ ul li {
       }
     }
     .toptwo {
-      margin-top: 3px;
+      margin-top: .053333rem;
       height: 0.933333rem;
       background-color: #fff;
       overflow: auto;
       width: 23.333333rem;
-      li {
-        float: left;
-        line-height: 100%;
-        font-size: 0.426667rem;
-        padding: 0 0.266667rem;
+      ul {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        li {
+        text-align: center;
+          line-height: 100%;
+          font-size: 0.426667rem;
+          padding: 0 0.266667rem;
+        }
       }
     }
     .topthree {
