@@ -7,8 +7,6 @@ Vue.config.productionTip = false
 //引入vue-router
 
 import router from './router/index';
-
-
 //引入element - ui
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -22,10 +20,6 @@ Vue.prototype.$axios = axios;
 
 //引入vueX
 import store from './store';
-
-
-
-
 
 new Vue({
   //把router实例和store实例注入到vue实例中

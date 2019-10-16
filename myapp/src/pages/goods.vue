@@ -176,7 +176,7 @@ ul li {
     background-color: #f4f4f4;
     position: fixed;
     top: 3.2rem;
-    bottom: 1.493333rem;
+    bottom:1.12rem;
     width: 100%;
     overflow: auto;
     .guding {
@@ -239,8 +239,7 @@ ul li {
   .goods_footer {
     position: fixed;
     bottom: 0;
-    height: 1.493333rem;
-    background-color: red;
+    height: 1.12rem;
     width: 100%;
   }
 }

@@ -148,6 +148,7 @@ li {
   color: red;
 }
 .list {
+  padding: 0;
   background-color: #f4f4f4;
   .top {
     position: fixed;

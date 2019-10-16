@@ -14,6 +14,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "app",
   data() {
@@ -62,6 +63,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+*{
+  font-size: .426667rem;
+}
 .el-row {
   margin-bottom: 10px;
 }
