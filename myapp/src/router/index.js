@@ -14,7 +14,12 @@ import mine from '../pages/mine.vue';
 import list from '../pages/list.vue';
 import login from '../pages/login.vue';
 import reg from '../pages/reg.vue';
+
 import usermsg from '../pages/usermsg.vue';
+
+import not from '../pages/not.vue';
+import xiang from '../pages/xiang.vue';
+
 
 
 //实例化router并配置参数
@@ -26,47 +31,55 @@ let router = new VueRouter({
             name: 'home',
             path: '/home',
             component: home
+        }, {
+            path: '/',
+            redirect: 'home'
         },
         {
             name: 'list',
             path: '/list',
             component: list
         },
-		{
-		    name: 'news',
-		    path: '/news',
-		    component: news,
-			meta: {
-			    requiresAuth: true
-			}
-		},
+        {
+            name: 'news',
+            path: '/news',
+            component: news,
+            meta: {
+                requiresAuth: true
+            }
+        },
         {
             name: 'usermsg',
             path: '/usermsg',
             component: usermsg,
-			// meta: {
-			//     requiresAuth: true
-			// }
+            // meta: {
+            //     requiresAuth: true
+            // }
         },
         {
             name: 'cart',
             path: '/cart',
             component: cart,
+
             // 给cart页面设置权限，没有登录的不能进去
             meta: {
                 requiresAuth: true
             }
+
         },
         {
             name: 'mine',
             path: '/mine',
             component: mine,
-            //给mine页面设置权限，没有登录的不能进去
-            meta: {
-                requiresAuth: true
-            }
+
         },
         //动态路由，根据商品得id进入商品得详情页
+        {
+            name: 'xiang',
+            path: '/xiang',
+            component: xiang,
+
+        },
         {
             name: 'goods',
             path: '/goods',
@@ -84,16 +97,18 @@ let router = new VueRouter({
             path: '/login',
             component: login
 
+        }, {
+            path: '/404',
+            component: not
         },
-        // {
-        //     path: '*',
-        //     redirect: '/404'
-        // }
-    ]
+        {
+            path: '*',
+            redirect: '/404'
 
-
-
+        }]
 });
+
+
 
 // 全局路由守卫，即每一个路由都要经过
 router.beforeEach(function (to, from, next) {
@@ -117,10 +132,10 @@ router.beforeEach(function (to, from, next) {
     } else {
         next();
     }
+
+
 });
 
-//同样是全局路由守卫，不过这个是执行完之后的守卫，所以不用next
-router.afterEach(function () {});
 
 //导出VueRouter
 export default router;

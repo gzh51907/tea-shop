@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
  <el-container>
       <!-- <el-header>
         <toubu />
@@ -19,6 +20,7 @@
 </template>
 
 <script>
+
 import dibu from "./components/footer/footer.vue";
 import toubu from "./components/toubu/toubu.vue";
 import cneten from "./components/nav/nav.vue";
