@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <el-container>
-      <el-header>
+ <el-container>
+      <!-- <el-header>
         <toubu />
-      </el-header>
+      </el-header> -->
 
-      <el-main>
-        <cneten />
+     <el-main>
+      <router-view />
       </el-main>
 
-      <el-footer id="footer">
+    <el-footer id="footer">
         <div>
           <dibu />
         </div>
@@ -27,8 +27,12 @@ export default {
     dibu,
     toubu,
     cneten
-  }
-};
+  },
+  created(){
+  	    this.$store.dispatch('checkLogin');	
+  	  },
+}
+
 </script>
 
 <style lang='scss' scoped>

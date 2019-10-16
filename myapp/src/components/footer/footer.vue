@@ -1,8 +1,9 @@
 <template>
   <div>
     <el-row :gutter="10">
-      <el-col :xs="4" style="width: 19.66667%" v-for="item in menus" :key="item.name">
-        <div class="grid-content bg-purple">
+      <el-col :xs="4" style="width: 19.66667%" v-for="item in menus" :key="item.name" @click="goto(item.path)"
+		 >
+        <div class="grid-content bg-purple" @click="goto(item.path)" >
           <div>
             <i :class="item.ic" style></i>
           </div>
@@ -17,7 +18,7 @@ export default {
   name: "app",
   data() {
     return {
-      activeIndex: "/home",
+      activeIndex: "/list",
       menus: [
         {
           name: "home",
@@ -52,7 +53,12 @@ export default {
         }
       ]
     };
-  }
+  },
+  methods:{
+	   goto(activeIndex){
+	  	    this.$router.push(activeIndex)
+	  	  }
+  },
 };
 </script>
 <style lang="scss" scoped>

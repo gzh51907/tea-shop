@@ -14,6 +14,7 @@ import mine from '../pages/mine.vue';
 import list from '../pages/list.vue';
 import login from '../pages/login.vue';
 import reg from '../pages/reg.vue';
+import usermsg from '../pages/usermsg.vue';
 
 
 //实例化router并配置参数
@@ -31,16 +32,27 @@ let router = new VueRouter({
             path: '/list',
             component: list
         },
+		{
+		    name: 'news',
+		    path: '/news',
+		    component: news,
+			meta: {
+			    requiresAuth: true
+			}
+		},
         {
-            name: 'news',
-            path: '/news',
-            component: news
+            name: 'usermsg',
+            path: '/usermsg',
+            component: usermsg,
+			// meta: {
+			//     requiresAuth: true
+			// }
         },
         {
             name: 'cart',
             path: '/cart',
             component: cart,
-            //给cart页面设置权限，没有登录的不能进去
+            // 给cart页面设置权限，没有登录的不能进去
             meta: {
                 requiresAuth: true
             }
@@ -73,19 +85,17 @@ let router = new VueRouter({
             component: login
 
         },
-        {
-
-            path: '*',
-            redirect: '/404'
-
-        }
-    ],
+        // {
+        //     path: '*',
+        //     redirect: '/404'
+        // }
+    ]
 
 
 
 });
 
-//全局路由守卫，即每一个路由都要经过
+// 全局路由守卫，即每一个路由都要经过
 router.beforeEach(function (to, from, next) {
 
     //在全局路由守卫beforeEach中进行页面权限访问控制
@@ -100,7 +110,7 @@ router.beforeEach(function (to, from, next) {
             router.push({
                 path: '/login',
                 query: {
-                    targetUrl: to.fullpath
+                    targetUrl: to.fullPath
                 }
             })
         }
