@@ -64,6 +64,7 @@
   </div>
 </template>
 <script>
+import '../assets/rem';
 export default {
   data() {
     return {
@@ -125,7 +126,9 @@ export default {
 * {
   margin: 0;
   padding: 0;
+  font-size: .426667rem;
 }
+
 ul li {
   list-style: none;
 }

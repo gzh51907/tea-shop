@@ -1,6 +1,4 @@
 <template>
-
-
   <div class="list">
     <div class="top">1</div>
     <div class="center">
@@ -26,6 +24,7 @@
   </div>
 </template>
 <script>
+import "../assets/rem";
 export default {
   data() {
     return {
@@ -134,11 +133,14 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 * {
   margin: 0;
   padding: 0;
+  font-size: 0.426667rem;
 }
+
 li {
   list-style: none;
 }
@@ -182,6 +184,7 @@ li {
           width: 100%;
           margin-left: 10px;
           line-height: 0.8rem;
+          font-size: 16px;
         }
         li {
           width: 2.186667rem;
