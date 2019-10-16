@@ -80,7 +80,6 @@ export default {
     },
     handleScroll() {
       let main_totop = gundong.scrollTop;
-
       if (main_totop > 1 && main_totop < 210) {
         this.tochange(1);
       } else if (main_totop >= 210 && main_totop < 510) {
@@ -112,7 +111,10 @@ export default {
       }
     },
     togoods(list, id) {
-      this.$router.push({ name: "goods", params: { list_name: list, list_id: id } });
+      this.$router.push({
+        path: "/goods",
+        query: { list_name: list, list_id: id }
+      });
     },
     tochange(id) {
       var listchange = document.getElementsByClassName("lists");

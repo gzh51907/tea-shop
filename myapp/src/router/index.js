@@ -15,6 +15,7 @@ import list from '../pages/list.vue';
 import login from '../pages/login.vue';
 import reg from '../pages/reg.vue';
 import not from '../pages/not.vue';
+import xiang from '../pages/xiang.vue';
 
 
 //实例化router并配置参数
@@ -55,8 +56,14 @@ let router = new VueRouter({
         },
         //动态路由，根据商品得id进入商品得详情页
         {
+            name: 'xiang',
+            path: '/xiang',
+            component: xiang,
+
+        },
+        {
             name: 'goods',
-            path: '/goods/:id',
+            path: '/goods',
             component: goods,
 
         },
