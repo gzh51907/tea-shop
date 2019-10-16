@@ -57,14 +57,16 @@
       </div>
     </div>
     <div class="xiangfooter">
-      <div class="zaishuo"><img src="../assets/images/list/baocun.png" alt=""></div>
+      <div class="zaishuo">
+        <img src="../assets/images/list/baocun.png" alt />
+      </div>
       <div class="jiaru">加入购物车</div>
       <div class="goumai">立即购买</div>
     </div>
   </div>
 </template>
 <script>
-import '../assets/rem';
+import "../assets/rem";
 export default {
   data() {
     return {
@@ -115,10 +117,6 @@ export default {
     this.list_name = list_name;
     this.price = price;
     this.name = name;
-    console.log(name);
-    console.log(list_name);
-    console.log(photo);
-    console.log(price);
   }
 };
 </script>
@@ -126,7 +124,7 @@ export default {
 * {
   margin: 0;
   padding: 0;
-  font-size: .426667rem;
+  font-size: 0.426667rem;
 }
 
 ul li {
@@ -149,6 +147,8 @@ ul li {
       position: fixed;
       left: 0.373333rem;
       top: 0.426667rem;
+      width: 0.533333rem;
+      height: 0.533333rem;
     }
     p {
       margin: 0 0.266667rem 0.266667rem;
@@ -284,6 +284,7 @@ ul li {
     bottom: 0;
     display: flex;
     width: 100%;
+    z-index: 99;
     .jiaru {
       width: 28%;
       background-color: #fdbe17;
@@ -302,8 +303,8 @@ ul li {
     }
     .zaishuo {
       width: 44%;
-      img{
-        margin-top: .266667rem;
+      img {
+        margin-top: 0.266667rem;
         width: 100%;
       }
     }

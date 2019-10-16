@@ -19,11 +19,11 @@ Router.use((req, res, next) => {
 const userRouter = require('./user');
 const admRouter = require('./adm');
 const request = require('request');
-
+const listRouter = require('./list');
 Router.use(express.urlencoded());
 Router.use('/user', userRouter);
 Router.use('/adm', admRouter);
-
+Router.use('/list', listRouter);
 
 Router.get('/verify', (req, res) => {
     let Authorization = req.get('Authorization');
@@ -32,16 +32,16 @@ Router.get('/verify', (req, res) => {
     res.send(formatData({ code: result ? 1 : 0 }))
 });
 
-Router.get('/huatian',(req,res)=>{
-	// request('https://www.nanshig.com/mobile/index.php',
-	request('https://www.htxq.net/firstPage/openHomePage.do',
-	(error,response,body)=>{
-		// console.log(body)
-		 // body = JSON.parse(body);
-		 console.log(body)
-		res.send(body)
-		
-	})
+Router.get('/huatian', (req, res) => {
+    // request('https://www.nanshig.com/mobile/index.php',
+    request('https://www.htxq.net/firstPage/openHomePage.do',
+        (error, response, body) => {
+            // console.log(body)
+            // body = JSON.parse(body);
+            console.log(body)
+            res.send(body)
+
+        })
 });
 
 

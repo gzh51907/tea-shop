@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import '../assets/rem';
+import "../assets/rem";
 export default {
   data() {
     return {
@@ -93,7 +93,7 @@ export default {
     async getlistmain() {
       let { list_name, list_id } = this.$route.query;
       this.chuanzou = list_name;
-      let { data } = await this.$axios.get("http://localhost:8080/list");
+      let { data } = await this.$axios.get("http://localhost:2020/list");
       let datas = data.data[0].list;
 
       this.getlistlist(datas, list_name);
@@ -114,7 +114,7 @@ export default {
 * {
   margin: 0;
   padding: 0;
-  font-size: .426667rem;
+  font-size: 0.426667rem;
 }
 ul li {
   list-style: none;
@@ -130,9 +130,9 @@ ul li {
     height: 3.2rem;
     width: 100%;
     .topone {
-      img{
-        width: .8rem;
-        height: .8rem;
+      img {
+        width: 0.8rem;
+        height: 0.8rem;
       }
       .returnlist {
         position: fixed;
@@ -176,7 +176,7 @@ ul li {
     background-color: #f4f4f4;
     position: fixed;
     top: 3.2rem;
-    bottom:1.12rem;
+    bottom: 1.12rem;
     width: 100%;
     overflow: auto;
     .guding {
