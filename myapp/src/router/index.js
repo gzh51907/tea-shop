@@ -52,9 +52,9 @@ let router = new VueRouter({
             name: 'usermsg',
             path: '/usermsg',
             component: usermsg,
-            // meta: {
-            //     requiresAuth: true
-            // }
+            meta: {
+                requiresAuth: true
+            }
         },
         {
             name: 'cart',
@@ -71,7 +71,9 @@ let router = new VueRouter({
             name: 'mine',
             path: '/mine',
             component: mine,
-
+			 meta: {
+			           requiresAuth: true
+			        }
         },
         //动态路由，根据商品得id进入商品得详情页
         {
