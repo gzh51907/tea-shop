@@ -31,9 +31,7 @@ export default {
   bottom: 0;
   width: 100%;
   text-align: center;
-  background-color: #ccc;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center
+  padding-top: .106667rem;
+  background-color: #f4f4f4;
 }
 </style>

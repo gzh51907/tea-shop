@@ -108,7 +108,6 @@ export default {
     }
   },
   created() {
-    console.log(this.$route.query);
     let {
       items: { name, photo, price }
     } = this.$route.query;
@@ -164,6 +163,7 @@ ul li {
     overflow: auto;
     .bigimg {
       width: 100%;
+      height: 10.666667rem;
     }
     .small_center {
       background-color: #fff;

@@ -191,6 +191,7 @@ ul li {
         margin-top: 0.106667rem;
         img {
           width: 100%;
+
           border-radius: 10px 10px 0 0;
           height: 4.533333rem;
         }
@@ -231,6 +232,7 @@ ul li {
           }
           .fukuan {
             color: #8f8f8f;
+            font-size: 0.32rem;
           }
         }
       }
