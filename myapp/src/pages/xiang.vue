@@ -61,7 +61,7 @@
         <img src="../assets/images/list/baocun.png" alt />
       </div>
       <div class="jiaru">加入购物车</div>
-      <div class="goumai">立即购买</div>
+      <div class="goumai" @click="gotocart">立即购买</div>
     </div>
   </div>
 </template>
@@ -88,6 +88,9 @@ export default {
   methods: {
     getNum(index) {
       this.num = index;
+    },
+    gotocart() {
+      this.$router.push({ path: "/cart" });
     },
     togoods() {
       this.$router.push({
