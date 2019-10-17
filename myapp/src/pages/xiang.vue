@@ -75,6 +75,7 @@ export default {
       imgurl: "",
       price: "",
       name: "",
+      gid: "",
       list_name: "",
       jihe: [
         "https://chadian-img.oss-cn-shanghai.aliyuncs.com/product/i15711300990005155.jpeg",
@@ -109,8 +110,9 @@ export default {
   },
   created() {
     let {
-      items: { name, photo, price }
+      items: { name, photo, price, gid }
     } = this.$route.query;
+    this.gid = gid;
     let { list_name } = this.$route.query;
     this.imgurl = photo;
     this.list_name = list_name;
