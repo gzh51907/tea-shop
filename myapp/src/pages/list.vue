@@ -85,6 +85,7 @@ export default {
     },
     handleScroll() {
       let main_totop = gundong.scrollTop;
+
       if (main_totop > 1 && main_totop < 210) {
         this.tochange(1);
       } else if (main_totop >= 210 && main_totop < 510) {
@@ -134,11 +135,11 @@ export default {
   },
   // 监听滚动事件
   mounted() {
-    document.addEventListener("scroll", this.handleScroll, false);
+    document.addEventListener("scroll", this.handleScroll, true);
   },
   // 删除滚动事件
-  beforeDesotry() {
-    document.removeEventListener("scroll", this.handleScroll, false);
+  beforeDestroy() {
+    document.removeEventListener("scroll", this.handleScroll, true);
   }
 };
 </script>

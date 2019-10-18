@@ -26,7 +26,7 @@ export default {
     actions:{
         async checkLogin(context,payload){
             let user = localStorage.getItem("user");
-			console.log(user)
+			
 			let Authorization = localStorage.getItem("Authorization");
             if(!user){
                 context.commit('logout');
