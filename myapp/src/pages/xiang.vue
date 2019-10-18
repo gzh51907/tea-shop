@@ -61,10 +61,10 @@
         <img src="../assets/images/list/baocun.png" alt />
       </div>
       <div class="jiaru" @click="addcart">
-        <span class="cartnum">{{qtylength}}</span>
+        <span class="cartnum">{{qty}}</span>
         加入购物车
       </div>
-      <div class="goumai">立即购买</div>
+      <div class="goumai" @click="gotocart">立即购买</div>
     </div>
   </div>
 </template>
@@ -91,16 +91,7 @@ export default {
       ]
     };
   },
-  computed: {
-    qtylength() {
-      let nums = 0;
-      for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
-        nums += this.$store.state.cart.cartlist[i].qty;
-      }
-      console.log(nums);
-      return nums;
-    }
-  },
+  computed: {},
   methods: {
     async addcart() {
       console.log(this.gid);
@@ -150,14 +141,18 @@ export default {
     }
   },
   created() {
+    // for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
+    //   this.qty += this.$store.state.cart.cartlist[i].qty;
+    // }
+    this.$store.dispatch("getcart");
     for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
-      this.qty += this.$store.state.cart.cartlist[i].qty;
+      this.qty += this.$store.state.cart.cartlist[i].qty-0;
     }
 
-    // console.log(this.$route.query);
-    for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
-      this.qty += this.$store.state.cart.cartlist[i].qty;
-    }
+    // let nums = 0;
+    // for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
+    //   nums += this.$store.state.cart.cartlist[i].qty;
+    // }
 
     let {
       items: { name, photo, price }

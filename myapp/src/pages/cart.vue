@@ -4,7 +4,7 @@
     <div class="bgyasd-ytas" style="height:450px;overflow-y:auto">
       <div class="byuas-cb">
         <div class="byuasa">
-          <span class="gyta-w">&nbsp;购物车</span>
+          <!-- <span class="gyta-w">&nbsp;购物车</span> -->
           <br />
           <span class="gyta-e">
             &nbsp;共
@@ -209,6 +209,12 @@ export default {
   border-radius: 0.5rem;
   margin-bottom: 0.4rem;
   margin-top: -0.5rem;
+  padding-left: .266667rem;
+  box-sizing: border-box;
+.el-row{
+  padding: .266667rem 0 ;
+ 
+}
 }
 .byuas-ytasc {
   // margin-top: 2rem;
@@ -264,6 +270,6 @@ a {
 }
 .pic{
 	width: 2.5rem;
-	heig: 2.5rem;
+	height: 2.5rem;
 }
 </style>

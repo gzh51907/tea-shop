@@ -36,11 +36,11 @@ let router = new VueRouter({
             path: '/',
             redirect: 'home'
         },
-		{
-		    name: 'order',
-		    path: '/order',
-		    component: order
-		},
+        {
+            name: 'order',
+            path: '/order',
+            component: order
+        },
         {
             name: 'list',
             path: '/list',
@@ -66,7 +66,6 @@ let router = new VueRouter({
             name: 'cart',
             path: '/cart',
             component: cart,
-
             // 给cart页面设置权限，没有登录的不能进去
             meta: {
                 requiresAuth: true
@@ -77,9 +76,9 @@ let router = new VueRouter({
             name: 'mine',
             path: '/mine',
             component: mine,
-			 meta: {
-			           requiresAuth: true
-			        }
+            meta: {
+                requiresAuth: true
+            }
         },
         //动态路由，根据商品得id进入商品得详情页
         {

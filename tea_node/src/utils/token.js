@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { secret } = require('../config.json')
-function create(data, expiresIn = 30) {
+function create(data, expiresIn = 3000) {
     console.log(data)
     let token = jwt.sign({ data }, secret, { expiresIn });
     return token;

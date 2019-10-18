@@ -42,6 +42,11 @@ export default {
     let { data } = await this.$axios.get("http://localhost:2020/list");
     let datas = data.data[0].list;
     this.listmain.push(...datas);
+
+    this.$store.dispatch("getcart");
+    for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
+      this.qty += this.$store.state.cart.cartlist[i].qty - 0;
+    }
   },
   methods: {
     // 点击列表分类，main跳转到顶部

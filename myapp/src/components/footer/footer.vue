@@ -82,7 +82,6 @@ export default {
 .bg-purple {
   i {
     //  margin-top: .806667rem;
-
     text-align: center;
   }
 }
