@@ -1,9 +1,14 @@
 <template>
   <div>
     <el-row :gutter="10">
-      <el-col :xs="4" style="width: 19.66667%" v-for="item in menus" :key="item.name" @click="goto(item.path)"
-		 >
-        <div class="grid-content bg-purple" @click="goto(item.path)" >
+      <el-col
+        :xs="4"
+        style="width: 19.66667%"
+        v-for="item in menus"
+        :key="item.name"
+        @click="goto(item.path)"
+      >
+        <div class="grid-content bg-purple" @click="goto(item.path)">
           <div>
             <i :class="item.ic" style></i>
           </div>
@@ -14,7 +19,6 @@
   </div>
 </template>
 <script>
-
 export default {
   name: "app",
   data() {
@@ -37,7 +41,7 @@ export default {
         {
           name: "news",
           path: "/news",
-          text: "信息",
+          text: "消息",
           ic: "el-icon-chat-dot-square"
         },
         {
@@ -55,32 +59,31 @@ export default {
       ]
     };
   },
-  methods:{
-	   goto(activeIndex){
-	  	    this.$router.push(activeIndex)
-	  	  }
-  },
+  methods: {
+    goto(activeIndex) {
+      this.$router.push(activeIndex);
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
-*{
-  font-size: .426667rem;
+* {
+  font-size: 0.426667rem;
 }
 .el-row {
   margin-bottom: 10px;
 }
 .el-col {
   border-radius: 4px;
-
 }
 .bg-purple-dark {
   background: #99a9bf;
 }
 .bg-purple {
   i {
-    //  margin-top: .806667rem; 
-   
-    text-align: center
+    //  margin-top: .806667rem;
+
+    text-align: center;
   }
 }
 .bg-purple-light {
