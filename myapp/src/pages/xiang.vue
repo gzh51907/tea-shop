@@ -60,27 +60,23 @@
       <div class="zaishuo">
         <img src="../assets/images/list/baocun.png" alt />
       </div>
-<<<<<<< HEAD
+
       <div class="jiaru" @click="addcart">
-		  <span class="cartnum">{{qty}}</span>
-		  加入购物车
-		  <!-- <el-badge :value="qtylength"></el-badge> -->
-	  </div>
+        <span class="cartnum">{{qty}}</span>
+        加入购物车
+        <!-- <el-badge :value="qtylength"></el-badge> -->
+      </div>
       <div class="goumai">立即购买</div>
-=======
-      <div class="jiaru">加入购物车</div>
-      <div class="goumai" @click="gotocart">立即购买</div>
->>>>>>> 09576f5be17899c8bf665db6092c92caf4603db5
     </div>
   </div>
 </template>
 <script>
 import "../assets/rem";
-	import qs from 'qs';
+import qs from "qs";
 export default {
   data() {
     return {
-	  qty:0,
+      qty: 0,
       xianglist: ["商品", "评价", "详情", "推荐"],
       num: 0,
       imgurl: "",
@@ -88,7 +84,7 @@ export default {
       name: "",
       gid: "",
       list_name: "",
-	  gid:'',
+      gid: "",
       jihe: [
         "https://chadian-img.oss-cn-shanghai.aliyuncs.com/product/i15711300990005155.jpeg",
         "https://chadian-img.oss-cn-shanghai.aliyuncs.com/product/i15711301000009917.jpeg",
@@ -98,29 +94,28 @@ export default {
     };
   },
   methods: {
-	 async addcart(){
-		  console.log(this.gid)
-		  let username = localStorage.getItem("user");
-		  let gid= this.gid
-		  let qty ="1"
-		  if(username){
-			  let { data } = await this.$axios.post(
-			    "http://localhost:2020/cart/addcart",qs.stringify(
-			    {
-			  	    username,
-					gid,
-					qty
-			    }
-			    )
-			  );	
-			if(data=='succes'){
-				this.qty++;
-			}
-		  }else{
-			  alert('请先登录')
-			  this.$router.push(`/login`);
-		  }
-	  },
+    async addcart() {
+      console.log(this.gid);
+      let username = localStorage.getItem("user");
+      let gid = this.gid;
+      let qty = "1";
+      if (username) {
+        let { data } = await this.$axios.post(
+          "http://localhost:2020/cart/addcart",
+          qs.stringify({
+            username,
+            gid,
+            qty
+          })
+        );
+        if (data == "succes") {
+          this.qty++;
+        }
+      } else {
+        alert("请先登录");
+        this.$router.push(`/login`);
+      }
+    },
     getNum(index) {
       this.num = index;
     },
@@ -147,35 +142,30 @@ export default {
     }
   },
   // computed:{
-	 //  qtylength(){
-	 //  		  let num=0;
-	 //  		  for(let i=0;i<this.$store.state.cart.cartlist.length;i++){
-	 //  			  num +=this.$store.state.cart.cartlist[i].qty
-	 //  		  }
-		// 	  this.qty=num
-	 //  		// return  num
-	 //  },
+  //  qtylength(){
+  //  		  let num=0;
+  //  		  for(let i=0;i<this.$store.state.cart.cartlist.length;i++){
+  //  			  num +=this.$store.state.cart.cartlist[i].qty
+  //  		  }
+  // 	  this.qty=num
+  //  		// return  num
+  //  },
   // },
   created() {
-<<<<<<< HEAD
     // console.log(this.$route.query);
-	for(let i=0;i<this.$store.state.cart.cartlist.length;i++){
-	 	this.qty +=this.$store.state.cart.cartlist[i].qty
-	}
-=======
->>>>>>> 09576f5be17899c8bf665db6092c92caf4603db5
+    for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
+      this.qty += this.$store.state.cart.cartlist[i].qty;
+    }
+
     let {
       items: { name, photo, price, gid }
     } = this.$route.query;
-<<<<<<< HEAD
-    let { list_name,gid } = this.$route.query;
-=======
-    this.gid = gid;
+
     let { list_name } = this.$route.query;
->>>>>>> 09576f5be17899c8bf665db6092c92caf4603db5
+
     this.imgurl = photo;
     this.list_name = list_name;
-	this.gid = gid;
+    this.gid = gid;
     this.price = price;
     this.name = name;
   }
@@ -348,14 +338,13 @@ ul li {
     width: 100%;
     z-index: 99;
     .jiaru {
-	
       width: 28%;
       background-color: #fdbe17;
       color: #fff;
       text-align: center;
       font-size: 0.48rem;
       line-height: 1.866667rem;
-	  position: relative;
+      position: relative;
     }
     .goumai {
       width: 28%;
@@ -365,17 +354,17 @@ ul li {
       font-size: 0.48rem;
       line-height: 1.866667rem;
     }
-	.cartnum{
-		position: absolute;
-		top: -0.375rem;
-		left: -0.375rem;
-		display: block;
-		width: 1rem;
-		height: 1rem;
-		background-color: #4CAE4C;
-		border-radius: 50%;
-		line-height: 1rem;
-	}
+    .cartnum {
+      position: absolute;
+      top: -0.375rem;
+      left: -0.375rem;
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      background-color: #4cae4c;
+      border-radius: 50%;
+      line-height: 1rem;
+    }
     .zaishuo {
       width: 44%;
       img {
