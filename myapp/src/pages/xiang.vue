@@ -60,17 +60,12 @@
       <div class="zaishuo">
         <img src="../assets/images/list/baocun.png" alt />
       </div>
-<<<<<<< HEAD
       <div class="jiaru" @click="addcart">
 		  <span class="cartnum">{{qty}}</span>
 		  加入购物车
 		  <!-- <el-badge :value="qtylength"></el-badge> -->
 	  </div>
       <div class="goumai">立即购买</div>
-=======
-      <div class="jiaru">加入购物车</div>
-      <div class="goumai" @click="gotocart">立即购买</div>
->>>>>>> 09576f5be17899c8bf665db6092c92caf4603db5
     </div>
   </div>
 </template>
@@ -157,22 +152,14 @@ export default {
 	 //  },
   // },
   created() {
-<<<<<<< HEAD
     // console.log(this.$route.query);
 	for(let i=0;i<this.$store.state.cart.cartlist.length;i++){
 	 	this.qty +=this.$store.state.cart.cartlist[i].qty
 	}
-=======
->>>>>>> 09576f5be17899c8bf665db6092c92caf4603db5
     let {
-      items: { name, photo, price, gid }
+      items: { name, photo, price}
     } = this.$route.query;
-<<<<<<< HEAD
     let { list_name,gid } = this.$route.query;
-=======
-    this.gid = gid;
-    let { list_name } = this.$route.query;
->>>>>>> 09576f5be17899c8bf665db6092c92caf4603db5
     this.imgurl = photo;
     this.list_name = list_name;
 	this.gid = gid;
