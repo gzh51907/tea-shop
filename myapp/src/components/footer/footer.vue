@@ -71,13 +71,16 @@ export default {
 }
 .el-col {
   border-radius: 4px;
+
 }
 .bg-purple-dark {
   background: #99a9bf;
 }
 .bg-purple {
   i {
-    margin-left: 0.4375rem;
+    //  margin-top: .806667rem; 
+   
+    text-align: center
   }
 }
 .bg-purple-light {

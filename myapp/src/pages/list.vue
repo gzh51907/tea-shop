@@ -1,6 +1,10 @@
 <template>
   <div class="list">
-    <div class="top">1</div>
+    <div class="top">
+      <i class="el-icon-s-grid"></i>
+      <input type="text" placeholder="请输您需要搜索的关键词" class="shurukuang" />
+      <i class="el-icon-s-comment"></i>
+    </div>
     <div class="center">
       <div class="aside">
         <li
@@ -153,14 +157,38 @@ li {
   .top {
     position: fixed;
     top: 0;
-    height: 0.533333rem;
+    padding: 0.266667rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 1.333333rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .shurukuang {
+      width: 8rem;
+      height: 0.666667rem;
+      background-color: #ccc;
+      border: none;
+      border-radius: 0.533333rem;
+      color: #fff;
+      padding-left: 0.46rem;
+      box-sizing: border-box;
+      font-size: .373333rem;
+    }
+    i {
+      font-size: 0.48rem;
+      color: #303133de;
+    }
   }
   .center {
-    margin-top: 0.8rem;
+    position: fixed;
+    top: 1.333333rem;
+    overflow: auto;
     display: flex;
     height: 16.186667rem;
     .aside {
       width: 25%;
+      background-color: #f4f4f4;
       li {
         width: 100%;
         height: 0.986667rem;
@@ -180,7 +208,7 @@ li {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-
+        background-color: #f4f4f4;
         h2 {
           width: 100%;
           margin-left: 10px;
@@ -196,7 +224,6 @@ li {
           position: relative;
           img {
             width: 100%;
-
             border-radius: 5px;
           }
           i {
