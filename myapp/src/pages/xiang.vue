@@ -60,7 +60,6 @@
       <div class="zaishuo">
         <img src="../assets/images/list/baocun.png" alt />
       </div>
-
       <div class="jiaru" @click="addcart">
         <span class="cartnum">{{qtylength}}</span>
         加入购物车
@@ -154,11 +153,16 @@ export default {
     for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
       this.qty += this.$store.state.cart.cartlist[i].qty;
     }
-    let {
-      items: { name, photo, price, gid }
-    } = this.$route.query;
 
-    let { list_name } = this.$route.query;
+    // console.log(this.$route.query);
+    for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
+      this.qty += this.$store.state.cart.cartlist[i].qty;
+    }
+
+    let {
+      items: { name, photo, price }
+    } = this.$route.query;
+    let { list_name, gid } = this.$route.query;
 
     this.imgurl = photo;
     this.list_name = list_name;
