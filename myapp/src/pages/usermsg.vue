@@ -89,14 +89,10 @@
 			},
 			async gofix(index){
 				let username = localStorage.getItem("user");
-				// let username='13106654783';
 				let fil=this.user[index].type;
 				var obj = {};
 				obj [fil]=this.user[index].msg;
 				console.log(obj)
-				let msg ={
-					username:'13106654783',			
-				};
 				let { data } = await this.$axios.post(
 				  "http://localhost:2020/user/fixmsg",qs.stringify(
 				  {
@@ -110,7 +106,6 @@
 		async mounted() {
 				let username = localStorage.getItem("user");
 				if(username){
-					// let username ='13106654783'
 					let { data } = await this.$axios.post(
 					  "http://localhost:2020/user/finduser",qs.stringify(
 					  {
@@ -133,13 +128,19 @@
 	}
 </script>
 
-<style>
+<style scoped>
+	*{
+		font-size: 0.5rem;
+	}
 	.top{
 		height: 1.875rem;
 	}
+	.top i{
+		font-size: 0.8rem;
+	}
 	.pic{
-		width: 2.5rem;
-		height: 2.5rem;
+		width: 1.5rem;
+		height: 1.5rem;
 	}
 	.pic img{
 		width: 100%;
@@ -160,6 +161,7 @@
 		width: 100%;
 	}
 	.box{
+		padding: 0.3rem;
 		width:100%;
 		height: 100%;
 		position: relative;

@@ -37,6 +37,7 @@
 </template>
 
 <script>
+	import 'amfe-flexible'
 import qs from 'qs';
 export default {
 	data() {
@@ -111,11 +112,14 @@ export default {
 	}
 };
 </script>
-<style>
+<style scoped>
+	*{
+		font-size: 0.5rem !important;
+	}
 	.input{
 		width: 100%;
 		border: #FFFFFF 1px solid;
-		height: 2.5rem;
+		height: 1.25rem;
 		padding-left: 1.25rem;
 	}
 	.item{

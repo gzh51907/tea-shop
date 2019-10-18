@@ -143,15 +143,15 @@ export default {
 	//   },
 };
 </script>
-<style>
+<style scoped>
 	*{
 		padding: 0;
 		margin: 0;
-		font-size: 1rem;
+		font-size: 0.5rem !important;
 		list-style: none;
 	}
 	.header{
-		padding: 0.625rem 0;
+		padding: 0.3rem 0;
 		background-color:#ffeb3b66;
 		position: relative;
 	}
@@ -160,14 +160,14 @@ export default {
 		color: #D43F3A;
 	}
 	.collect li{
-		padding: 0.625rem 0;
-		font-size: 0.875rem;
+		padding: 0.3rem 0;
+		font-size: 0.42rem;
 		width: 25%;
 		text-align: center;
 	}
 	.logo{
-		width: 3.75rem;
-		height: 3.75rem;
+		width: 2.0rem;
+		height: 2.0rem;
 		margin: auto;
 	}
 	.logo img{
@@ -176,19 +176,19 @@ export default {
 	}
 	.el-icon-setting{
 		position: absolute;
-		right: 0.625rem;
-		top:0.625rem;
+		right: 0.3rem;
+		top:0.3rem;
 		font-size: 1rem;
 	}
 	.myorder{
 		border: 1px solid #ADADAD;
-		border-radius: 0.625rem;
+		border-radius: 0.3rem;
 		margin-top: 1rem;
 	}
 	.lr{
 		display: flex;
 		justify-content: space-between;
-		padding: 0.375rem 0.625rem;
+		padding: 0.3rem 0.3rem;
 		font-size: 14px;
 		color: #3C3C3C;
 		border-bottom: 0.0625rem solid #ADADAD;

@@ -19,6 +19,7 @@ import usermsg from '../pages/usermsg.vue';
 
 import not from '../pages/not.vue';
 import xiang from '../pages/xiang.vue';
+import order from '../pages/order.vue';
 
 
 
@@ -35,6 +36,11 @@ let router = new VueRouter({
             path: '/',
             redirect: 'home'
         },
+		{
+		    name: 'order',
+		    path: '/order',
+		    component: order
+		},
         {
             name: 'list',
             path: '/list',

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import './assets/ic/iconfont.css'
+// import 'amfe-flexible'
 
 Vue.config.productionTip = false
 

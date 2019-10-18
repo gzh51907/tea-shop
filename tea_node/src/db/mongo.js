@@ -59,8 +59,24 @@ async function update(colName,query,data){
     client.close();
     return result;
 }
+/**
+ * 删
+ * @param {String} colName 
+ * @param {Object} query 
+ */
+async function remove(colName,query){
+    let {db,client} = await conn();
+    // 获取集合
+    let col = db.collection(colName);
+
+    let result = await col.deleteMany(query);
+    client.close();
+    return result;
+}
+
 module.exports = {
     find,
     create,
-	update
+	update,
+	remove
 } 

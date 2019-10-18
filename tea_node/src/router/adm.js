@@ -46,13 +46,13 @@ Router.post('/login', async (req, res) => {
    	}
 })
 //查询并返回用户信息
-// Router.post('/finduser', async (req, res) => {
-//     let {username} = req.body;
-// 	console.log(username)
-//     let result = await mongo.find('user', {username})
-//     res.send(result)
-// 	console.log(result.length)
-// })
+Router.post('/findadm', async (req, res) => {
+    let {admname} = req.body;
+	console.log(admname)
+    let result = await mongo.find('admin', {admname})
+    res.send(result)
+	console.log(result.length)
+})
 //修改用户的信息
 Router.post('/fixpass', async (req, res) => {
     let {admname,password} = req.body;

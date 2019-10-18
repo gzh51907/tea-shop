@@ -30,7 +30,7 @@
           v-for="(items,index)  in item"
           :key="index"
           class="small_guding"
-          @click="toxiang(items)"
+          @click="toxiang(items,items.gid)"
         >
           <img :src="items.photo" alt />
           <p class="pone">{{items.name}}</p>
@@ -64,10 +64,10 @@ export default {
     };
   },
   methods: {
-    toxiang(items) {
+    toxiang(items ,gid) {
       this.$router.push({
         path: "/xiang",
-        query: { items: items, list_name: this.chuanzou }
+        query: { items: items, list_name: this.chuanzou ,gid:gid}
       });
     },
     toreturn() {
