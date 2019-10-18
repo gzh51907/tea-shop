@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="byuas-ca">购物车</div>
-    <div class="bgyasd-ytas" style="height:450px;overflow-y:auto">
+    <div class="bgyasd-ytas" >
       <div class="byuas-cb">
         <div class="byuasa">
           <!-- <span class="gyta-w">&nbsp;购物车</span> -->
@@ -172,6 +172,8 @@ export default {
   background: linear-gradient(to right, #fe4101, #f02b2b);
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
 }
 .byuas-cb {
   color: rgb(255, 255, 255);
@@ -182,6 +184,12 @@ export default {
   justify-content: space-between;
   // position: relative;
   
+}
+.bgyasd-ytas{
+  position: fixed;
+  top: .853333rem;
+  bottom:1.5rem;
+  overflow: auto;
 }
 .byuas-cb .gytb {
   line-height: 1rem;
@@ -242,6 +250,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+   bottom: 1.28rem;
+   background-color: #fff;
 }
 .puai-ewqb {
   display: flex;
