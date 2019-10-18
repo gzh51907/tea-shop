@@ -41,14 +41,14 @@
               <el-col :span="13">
                 <!--  -->
                 <div id="app">
-                  <p>
+                  <div>
                     <!-- 使用 router-link 组件来导航. -->
                     <!-- 通过传入 `to` 属性指定在main.js文件设置的别名链接，如/1 -->
                     <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-                    <router-link to="/1">
+                    <!-- <router-link to="/1">
+                    </router-link> -->
                       <h5 class="title">{{item.name}}</h5>
-                    </router-link>
-                  </p>
+                  </div>
                   <!-- 路由出口 -->
                   <!-- 点击<router-link>的时候指定的页面将渲染在这里 -->
                   <router-view></router-view>
