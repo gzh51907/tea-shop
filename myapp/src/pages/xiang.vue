@@ -62,9 +62,8 @@
       </div>
 
       <div class="jiaru" @click="addcart">
-        <span class="cartnum">{{qty}}</span>
+        <span class="cartnum">{{qtylength}}</span>
         加入购物车
-        <!-- <el-badge :value="qtylength"></el-badge> -->
       </div>
       <div class="goumai">立即购买</div>
     </div>
@@ -92,6 +91,16 @@ export default {
         "https://chadian-img.oss-cn-shanghai.aliyuncs.com/product/i15711301020002285.jpeg"
       ]
     };
+  },
+  computed: {
+    qtylength() {
+      let nums = 0;
+      for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
+        nums += this.$store.state.cart.cartlist[i].qty;
+      }
+      console.log(nums);
+      return nums;
+    }
   },
   methods: {
     async addcart() {
@@ -141,22 +150,10 @@ export default {
       }
     }
   },
-  // computed:{
-  //  qtylength(){
-  //  		  let num=0;
-  //  		  for(let i=0;i<this.$store.state.cart.cartlist.length;i++){
-  //  			  num +=this.$store.state.cart.cartlist[i].qty
-  //  		  }
-  // 	  this.qty=num
-  //  		// return  num
-  //  },
-  // },
   created() {
-    // console.log(this.$route.query);
     for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
       this.qty += this.$store.state.cart.cartlist[i].qty;
     }
-
     let {
       items: { name, photo, price, gid }
     } = this.$route.query;
