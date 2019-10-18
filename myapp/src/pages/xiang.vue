@@ -215,7 +215,7 @@ ul li {
     overflow: auto;
     .bigimg {
       width: 100%;
-      height: 10.666667rem;
+      height: 8.666667rem;
     }
     .small_center {
       background-color: #fff;
