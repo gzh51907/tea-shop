@@ -132,8 +132,13 @@ export default {
       }
     }
   },
+  // 监听滚动事件
   mounted() {
-    window.addEventListener("scroll", this.handleScroll, true);
+    document.addEventListener("scroll", this.handleScroll, false);
+  },
+  // 删除滚动事件
+  beforeDesotry() {
+    document.removeEventListener("scroll", this.handleScroll, false);
   }
 };
 </script>
@@ -173,7 +178,7 @@ li {
       color: #fff;
       padding-left: 0.46rem;
       box-sizing: border-box;
-      font-size: .373333rem;
+      font-size: 0.373333rem;
     }
     i {
       font-size: 0.48rem;
