@@ -2,14 +2,13 @@
   <el-container>
     <el-aside width="200px">
 	   <el-menu :default-active="activeIndex"  class="el-menu-vertical-demo" @select="handleSelect" router>
-	     <el-menu-item :index="item.path" v-for="item in menus" :key="item.name">
+	     <el-menu-item :index="item.path" v-for="item in menus" :key="item.name" >
 	       <i class="el-icon-setting"></i>
 	       <span slot="title">{{item.text}}</span>
 	     </el-menu-item>
 	   </el-menu>
 	</el-aside>
     <el-main>
-		main
 	<router-view />
 	</el-main>
   </el-container>

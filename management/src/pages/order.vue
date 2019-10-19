@@ -27,7 +27,7 @@ export default {
 				{
 					name: "order/nodeliver",
 					path: "/order/nodeliver",
-					text: "待发货订单"
+					text: "通知买家"
 				},
 			],
 		}

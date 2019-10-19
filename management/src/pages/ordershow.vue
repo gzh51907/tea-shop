@@ -1,21 +1,24 @@
 <template>
+	<div>
+		<el-tabs type="border-card" v-model="istab">
+		  <el-tab-pane v-for="(item,index) in tab" :key='item' :label="item" :name=item>
+			  共{{tableData5.length}}条订单
+		  </el-tab-pane>
+		</el-tabs>
   <el-table
     :data="tableData5"
     style="width: 100%">
     <el-table-column type="expand">
       <template slot-scope="props">
         <el-form label-position="left" inline class="demo-table-expand">
-          <el-form-item label="所属店铺">
-            <span>{{ props.row.shop }}</span>
-          </el-form-item>
           <el-form-item label="商品 ID">
             <span>{{ props.row.goodsid }}</span>
           </el-form-item>
-          <el-form-item label="店铺名称">
+         <el-form-item label="店铺名称">
             <span>{{ props.row.admname }}</span>
           </el-form-item>
           <el-form-item label="收货人名称">
-            <span>{{ props.row.consignee }}</span>
+            <span>{{ props.row.username }}</span>
           </el-form-item>
           <el-form-item label="收货地址">
             <span>{{ props.row.address }}</span>
@@ -43,7 +46,25 @@
 	  label="订单状态"
 	  prop="state">
 	</el-table-column>
+	  <el-table-column
+	      fixed="right"
+	      label="操作"
+	      width="100">
+	      <template slot-scope="scope" >
+			  <el-dropdown>
+			    <span class="el-dropdown-link">
+			      修改状态<i class="el-icon-arrow-down el-icon--right"></i>
+			    </span>
+			    <el-dropdown-menu slot="dropdown">
+			      <el-dropdown-item v-for="(item,index) in state" :key='item'>
+				  <el-button type="text"  @click="change(index,scope.row)" >{{item}}</el-button>
+				  </el-dropdown-item>
+			    </el-dropdown-menu>
+			  </el-dropdown>
+	      </template>
+	    </el-table-column>
   </el-table>
+  </div>
 </template>
 
 <style>
@@ -66,7 +87,11 @@
   export default {
     data() {
       return {
+		istab:"全部订单",
+		tab:["全部订单","未付款","待发货","待收货","已完成"],
+		state:["未付款","待发货","待收货","已完成"],
 		price:'',
+		alldata:[],
         tableData5: [
 			// {
     //       id: '12987122',
@@ -84,11 +109,41 @@
 		]
       }
     },
-	// computed:{
-	// 	getprice(){
-	// 		this.price=this.tableData5.price
-	// 	}	
-	// },
+	methods:{
+		async change(index,isdata){
+			for(let i=0;i<this.tableData5.length;i++){
+				if(isdata._id==this.tableData5[i]._id){
+					this.tableData5[i].state=this.state[index];
+				}
+			};
+			let state=index;
+			let _id=isdata._id;
+			let { data } = await this.$axios.post("http://localhost:2020/admorder/fixstate",qs.stringify(
+			  {
+				    state,
+					_id
+			  }));	
+			  // console.log(data)
+		},
+		
+	},
+	watch:{
+		istab:function(){
+			console.log(this.alldata.length,this.istab)
+			this.tableData5=[];
+			let a=this.alldata.length
+			if(this.istab=="全部订单"){
+				this.tableData5=this.alldata
+			}else{
+				for(let i=0;i<a;i++){
+					if(this.istab==this.alldata[i].state){
+						this.tableData5.push(this.alldata[i])
+					}
+				}
+			}
+			
+		}
+	},
 	async mounted() {
 		let admname = localStorage.getItem("admname");
 		if(admname){
@@ -99,19 +154,12 @@
 			  }
 			  )
 			);		
-			console.log(data)
 			for(let i=0;i<data.length;i++){
-				data[i].money=data[i].num*data[i].price
+				data[i].money=data[i].num*data[i].price;
+				data[i].state=this.state[data[i].state]
 			}
-			// data[0].money=data[0].num*data[0].price
+			this.alldata=data;
 			this.tableData5=data;
-			// for(let i=0;i<this.user.length;i++){
-			// 	for(let j=0;j<Object.keys(data[0]).length;j++){
-			// 		if(Object.keys(data[0])[j]==this.user[i].type){
-			// 				this.user[i].msg=data[0][Object.keys(data[0])[j]];
-			// 			}
-			// 	}
-			// }
 		}else{
 			this.$router.push(`/login`);
 		}
