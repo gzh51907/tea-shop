@@ -22,12 +22,14 @@ const request = require('request');
 const listRouter = require('./list');
 const orderRouter = require('./order');
 const cartRouter = require('./cart');
+const admorderRouter = require('./admorder');
 Router.use(express.urlencoded());
 Router.use('/user', userRouter);
 Router.use('/adm', admRouter);
 Router.use('/list', listRouter);
 Router.use('/order', orderRouter);
 Router.use('/cart', cartRouter);
+Router.use('/admorder', admorderRouter);
 
 Router.get('/verify', (req, res) => {
     let Authorization = req.get('Authorization');
