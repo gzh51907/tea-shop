@@ -39,7 +39,7 @@ export default {
   },
   async created() {
     // 数据库初始渲染main列表
-    let { data } = await this.$axios.get("http://localhost:2020/list");
+    let { data } = await this.$axios.get("http://116.62.5.240:2020/list");
     let datas = data.data[0].list;
     this.listmain.push(...datas);
 

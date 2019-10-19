@@ -93,7 +93,7 @@ export default {
     async getlistmain() {
       let { list_name, list_id } = this.$route.query;
       this.chuanzou = list_name;
-      let { data } = await this.$axios.get("http://localhost:2020/list");
+      let { data } = await this.$axios.get("http://116.62.5.240:2020/list");
       let datas = data.data[0].list;
 
       this.getlistlist(datas, list_name);

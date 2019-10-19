@@ -118,7 +118,7 @@ export default {
   },
   async mounted() {
     console.log(444);
-    let { data } = await this.$axios.get("http://localhost:2020/list/");
+    let { data } = await this.$axios.get("http://116.62.5.240:2020/list/");
     let goods = data.data[0].list;
     let isgood = [];
     // console.log(goods)

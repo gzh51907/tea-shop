@@ -94,7 +94,7 @@
 				obj [fil]=this.user[index].msg;
 				console.log(obj)
 				let { data } = await this.$axios.post(
-				  "http://localhost:2020/user/fixmsg",qs.stringify(
+				  "http://116.62.5.240:2020/user/fixmsg",qs.stringify(
 				  {
 					    username,
 						obj
@@ -107,7 +107,7 @@
 				let username = localStorage.getItem("user");
 				if(username){
 					let { data } = await this.$axios.post(
-					  "http://localhost:2020/user/finduser",qs.stringify(
+					  "http://116.62.5.240:2020/user/finduser",qs.stringify(
 					  {
 						    username,
 					  }

@@ -33,7 +33,7 @@ export default {
             }else{
                 // user = JSON.parse(user);
                 // 发起ajax请求，校验token是否过期
-                let {data} = await axios.get('http://localhost:2020/verify',{
+                let {data} = await axios.get('http://116.62.5.240:2020/verify',{
                     headers:{
                         // Authorization:user.Authorization
 						Authorization:Authorization

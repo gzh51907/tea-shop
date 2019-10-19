@@ -44,7 +44,7 @@
 	         };
 			 const checkUsername = async (rule, value, callback) => {
 			 
-			   let {data} = await this.$axios.get('http://localhost:2020/user/check',{
+			   let {data} = await this.$axios.get('http://116.62.5.240:2020/user/check',{
 			     params:{
 			       username:this.ruleForm.username
 			     }
@@ -90,7 +90,7 @@
 	        this.$refs.regForm.validate( async (valid) => {
 	          if (valid) {
 	           let {username,password}=this.ruleForm;	
-					let {data} = await this.$axios.post('http://localhost:2020/user/reg',qs.stringify({
+					let {data} = await this.$axios.post('http://116.62.5.240:2020/user/reg',qs.stringify({
 						  username,
 						  password
 					}))	;

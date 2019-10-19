@@ -100,7 +100,7 @@ export default {
       let qty = "1";
       if (username) {
         let { data } = await this.$axios.post(
-          "http://localhost:2020/cart/addcart",
+          "http://116.62.5.240:2020/cart/addcart",
           qs.stringify({
             username,
             gid,
@@ -146,7 +146,7 @@ export default {
     // }
     this.$store.dispatch("getcart");
     for (let i = 0; i < this.$store.state.cart.cartlist.length; i++) {
-      this.qty += this.$store.state.cart.cartlist[i].qty-0;
+      this.qty += this.$store.state.cart.cartlist[i].qty - 0;
     }
 
     // let nums = 0;

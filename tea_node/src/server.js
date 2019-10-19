@@ -1,5 +1,6 @@
 // 引入模块
 const express = require('express');
+const fs = require('fs');
 // 引入json文件
 const { PORT } = require('./config.json');
 const allRouter = require('./router');
@@ -8,7 +9,13 @@ const allRouter = require('./router');
 const app = express();
 
 //静态资源服务器
-app.use(express.static('./'))
+app.use(express.static('./'));
+
+app.use((req, res) => {
+    let content = fs.readFileSync('./index.html');
+    res.set('Content-Type', 'text / html', charset = utf - 8);
+    res.send(content)
+})
 
 app.use(allRouter);
 
