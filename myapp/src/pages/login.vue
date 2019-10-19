@@ -74,7 +74,7 @@ export default {
 	
 	        let { username, password, mdl } = this.ruleForm;
 	        let { data } = await this.$axios.post(
-	          "http://localhost:2020/user/login",qs.stringify(
+	          "http://116.62.5.240:2020/user/login",qs.stringify(
 	          {
 				    username,
 				    password,

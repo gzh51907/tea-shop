@@ -25,6 +25,7 @@ import order from '../pages/order.vue';
 
 //实例化router并配置参数
 let router = new VueRouter({
+    mode:'history',
     //配置参数，不同的URL路径显示不同内容
     routes: [
         //首页

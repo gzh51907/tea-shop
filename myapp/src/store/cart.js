@@ -97,7 +97,7 @@ export default {
 		   async getcart(context) {
 		   	let username = localStorage.getItem("user");
 		   	if(username){
-		   		let { data } = await axios.post("http://localhost:2020/cart/findcart",qs.stringify({username}));
+		   		let { data } = await axios.post("http://116.62.5.240:2020/cart/findcart",qs.stringify({username}));
 		       context.commit('setcartlist',data)
 		   	}else{
 		   		this.$router.push(`/login`);
@@ -108,7 +108,7 @@ export default {
 	       async changeQtyAsync(context, {_id, gid, qty }) {
 			   	let username = localStorage.getItem("user");
 	           // 获取库存数量kucun，然后与传入的qty进行对比
-	           let { data } = await axios.get(`http://localhost:2020/cart/findkucun?gid=${gid}&qty=${qty}&username=${username}`)
+	           let { data } = await axios.get(`http://116.62.5.240:2020/cart/findkucun?gid=${gid}&qty=${qty}&username=${username}`)
 	           let kucun = data;
 	           if (qty <= kucun & qty>=1) {
 	               context.commit('changeQty', {_id, qty })
@@ -126,7 +126,7 @@ export default {
 			 // let _id="sdadas"
 			 console.log(qs.stringify({_id}))
 		   	if(_id.length !=0){
-		   		let { data } = await axios.post("http://localhost:2020/cart/removecart",
+		   		let { data } = await axios.post("http://116.62.5.240:2020/cart/removecart",
 				qs.stringify({_id}));
 				if(data=='ok'){
 					context.commit('removeFromCart')
